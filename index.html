@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>SMART INVENTORY MANAGEMENT SYSTEM</title>
+    <title>SMART INVENTORY MANAGEMENT SYSTEM </title>
     <link href="css/styles.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
@@ -28,10 +28,10 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                    <a class="dropdown-item" href="#">Settings</a>
+                    <a class="dropdown-item" href="#">Settings </a>
                     <a class="dropdown-item" href="#">Activity Log</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" id="logout">Logout</a>
+                    <a class="dropdown-item" id="logout" onclick="logout()">Logout</a>
                 </div>
             </li>
         </ul>
@@ -48,28 +48,15 @@
                             <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                             Dashboard
                         </a>
+                        <a id="items" class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"><i class="fas fa-shopping-cart"></i></div>
+                            Items
+                        </a>
                         <a id="customers" class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                             <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
                             Customers
                         </a>
-                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                            <div class="sb-nav-link-icon"><i class="fas fa-home"></i></div>
-                            Vendors
-                        </a>
-                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                            <div class="sb-nav-link-icon"><i class="fas fa-shopping-bag"></i></div>
-                            Purchase orders
-                        </a>
                         
-                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                            <div class="sb-nav-link-icon"><i class="fas fa-calculator"></i></div>
-                            Packages
-                        </a>
-                        
-                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                            <div class="sb-nav-link-icon"><i class="fas fa-cubes"></i></div>
-                            Purchase orders
-                        </a>
                         <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
 
@@ -83,75 +70,43 @@
             <main>
                 <div class="container-fluid">
                     <h1 class="mt-4">Inventory Management System</h1>
+                    <br>
                     <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item active">Admin</li>
                     </ol>
-                    <!--<div class="row">
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-info text-white mb-4">
-                                <div class="card-body">To be packed</div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">View Details</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
+                
+                    <div class="charts">
+                        <div class="charts__left">
+                          <div class="charts__left__title">
+                            <div>
+                              <h1>Daily Reports</h1>
+                              <p></p>
                             </div>
+                          </div>
+                          <div id="apex1"></div>
                         </div>
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-info text-white mb-6">
-                                <div class="card-body">To be shipped</div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">View Details</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
+            
+                        <div class="charts__right">
+                          <div class="charts__right__title">
+                            <div>
+                              <h1>Inventory summary</h1>
+                              <p></p>
                             </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-info text-white mb-4">
-                                <div class="card-body">To be delivered</div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">View Details</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
+                          </div>
+            
+                          <div class="charts__right__cards">
+                            <div class="card1">
+                              <h1>Quantity in hand</h1>
+                              <p><h2>20</h2></p>
                             </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-info text-white mb-4">
-                                <div class="card-body">To be invoiced</div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">View Details</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
+                            <div class="card4">
+                              <h1>Quantity received</h1>
+                              <p><h2>100</h2></p>
                             </div>
+                          </div>
                         </div>
-                    </div>-->
-                    <div class="row">
-                        <div class="col-xl-6">
-                            <div class="card mb-8">
-                                <div class="card-header">
-                                    <i class="fas fa-chart-bar mr-1"></i>
-                                    Inventory summary
-                                </div>
-                                <br>
-                                <br>
-                                <div class="container">
-                                    <div class="row g-2">
-                                        <div class="col-8">
-                                        <div class="p-3 border bg-light">Quantity in hand</div>
-                                        </div>
-                                        <div class="col-3">
-                                        <div class="p-3 border bg-light">20</div>
-                                        </div>
-                                        <div class="col-8">
-                                        <div class="p-3 border bg-light">Quantity to be received</div>
-                                        </div>
-                                        <div class="col-3">
-                                        <div class="p-3 border bg-light">50</div>
-                                        </div>
-                                    </div>   
-                                    </div>
-                                <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
-                            </div>
-                        </div>
+                      </div>
+                      <!-- CHARTS ENDS HERE -->
                     </div>
                     <!--<div>
                         <head>
@@ -193,48 +148,102 @@
                         </body>
 
                     </div>-->
-                    <!--<div class="card mb-4">
-                        <div class="card-header">
-                            <i class="fas fa-table mr-1"></i>
-                            DataTable Example
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                            <td>$320,800</td>
-                                        </tr>
-                                        </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>-->
+                    <br>
+                    <div >
+                        <main>
+                            <div class="container-fluid">
+                                <h1 class="mt-4"></h1>
+                                <ol class="breadcrumb mb-4">
+                                    <li class="breadcrumb-item active">Products available</li>
+                                </ol>
+                    <table class="table  table-hover table-bordered ">
+                        <thead>
+                          <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Company name</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Mouse</td>
+                            <td>HP</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>Mouse</td>
+                            <td>Asus</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td>Keyboard</td>
+                            <td>CosmicByte</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">4</th>
+                            <td>Keyboard</td>
+                            <td>Zebronics</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">5</th>
+                            <td>Keyboard</td>
+                            <td>HP</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">6</th>
+                            <td>Desktop</td>
+                            <td>HP</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">7</th>
+                            <td>Desktop</td>
+                            <td>Dell</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">8</th>
+                            <td>Desktop</td>
+                            <td>Lenovo</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">9</th>
+                            <td>Charger</td>
+                            <td>Xiaomi</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">10</th>
+                            <td>Charger</td>
+                            <td>One plus</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">11</th>
+                            <td>Charger</td>
+                            <td>Samsung</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">12</th>
+                            <td>Charger</td>
+                            <td>Vivo</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">13</th>
+                            <td>Webcam</td>
+                            <td>Intel</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">14</th>
+                            <td>Webcam</td>
+                            <td>Logitech</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">15</th>
+                            <td>Webcam</td>
+                            <td>HP</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    </main>
                 </div>
             </main>
             
@@ -260,6 +269,16 @@
             location.href = "customers.html";
                 };
     </script>
+
+    <script type="text/javascript">
+        document.getElementById("items").onclick = function () {
+            location.href = "item.html";
+                };
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="script.js"></script>
+    <script src="login.js"></script>
     
 </body>
 </html>
